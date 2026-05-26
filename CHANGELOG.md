@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.5] - 2026-05-26
+
+### Changed
+- Marketplace listing name in `action.yml` `name:` field changed from `ag-scan` to `agent-guard-pr-scan` to bypass stale Marketplace metadata after the earlier repo-recreate. PyPI package, CLI, and brand stay unchanged.
+
 ## [0.1.4] - 2026-05-26
 
 ### Notes

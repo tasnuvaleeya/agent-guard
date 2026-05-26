@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "ag-scan"
-version = "0.1.4"
+version = "0.1.5"
 description = "CI/CD safety and risk analysis for AI-assisted coding workflows."
 readme = "README.md"
 requires-python = ">=3.11"

@@ -1,4 +1,4 @@
-name: ag-scan
+name: agent-guard-pr-scan
 description: CI/CD safety and risk analysis for AI-assisted code changes (agent-guard).
 author: agent-guard contributors
 branding:
