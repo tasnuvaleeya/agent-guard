@@ -34,9 +34,11 @@ jobs:
 ### Locally
 
 ```bash
-pip install agent-guard
+pip install ag-scan                # PyPI distribution name
 git diff main...HEAD | agent-guard scan --format md
 ```
+
+> **Note:** the PyPI distribution name is `ag-scan` because `agent-guard` was already taken by an unrelated project. The CLI command and GitHub Action are still named `agent-guard`.
 
 ## What it flags
 

@@ -35,7 +35,7 @@ runs:
       shell: bash
       run: |
         python -m pip install --upgrade pip
-        python -m pip install "agent-guard==${{ inputs.agent-guard-version }}"
+        python -m pip install "ag-scan==${{ inputs.agent-guard-version }}"
 
     - name: Determine base SHA
       id: base

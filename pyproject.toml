@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "agent-guard"
+name = "ag-scan"
 version = "0.1.0"
 description = "CI/CD safety and risk analysis for AI-assisted coding workflows."
 readme = "README.md"

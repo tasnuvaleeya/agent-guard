@@ -59,9 +59,11 @@ That's all. `fetch-depth: 0` is the only easy-to-miss detail — without it, `gi
 ### 2.2 As a CLI
 
 ```bash
-pip install agent-guard
+pip install ag-scan          # PyPI distribution name (see note below)
 agent-guard --version
 ```
+
+> **Distribution name vs CLI name.** The PyPI package is `ag-scan` because the bare `agent-guard` name on PyPI was taken by an unrelated project. The CLI command, the GitHub Action, and everything else stay as `agent-guard`.
 
 Python 3.11+ required. For development:
 
