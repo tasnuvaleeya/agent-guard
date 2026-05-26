@@ -8,6 +8,8 @@ agent-guard scans pull request diffs for the patterns that AI coding assistants 
 
 Milestone 1 — MVP. Python only for hallucinated-import detection; all other analyzers are language-agnostic. See [`features/agent-guard-feature-plan.md`](features/agent-guard-feature-plan.md) for the full roadmap.
 
+For the full reference — every CLI flag, every rule, every config key, CI recipes, troubleshooting, and FAQ — see [**`docs/USER_MANUAL.md`**](docs/USER_MANUAL.md).
+
 ## Quickstart
 
 ### As a GitHub Action
