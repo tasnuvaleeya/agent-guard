@@ -7,5 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-05-26
+
+### Changed
+- README now includes a screenshot of a sample sticky PR comment for the Marketplace listing.
+
+### Notes
+- PyPI distribution name is `ag-scan` (the `agent-guard` name was taken by an unrelated project). CLI command, Action, and brand stay as `agent-guard`.
+
+## [0.1.0] - 2026-05-26
+
 ### Added
 - Milestone 1 scaffold: CLI, diff parser, five analyzers (secrets, hallucinated_imports, dangerous_patterns, missing_tests, infra_changes), risk scorer, Markdown/JSON reporters, GitHub Action, sticky PR comment poster.
