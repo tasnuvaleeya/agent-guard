@@ -51,7 +51,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0     # needed for base...head diff
-      - uses: <your-org>/agent-guard@v0.1
+      - uses: tasnuvaleeya/agent-guard@v0.1
 ```
 
 That's all. `fetch-depth: 0` is the only easy-to-miss detail — without it, `git diff base...HEAD` won't have both endpoints.
@@ -66,7 +66,7 @@ agent-guard --version
 Python 3.11+ required. For development:
 
 ```bash
-git clone https://github.com/<your-org>/agent-guard
+git clone https://github.com/tasnuvaleeya/agent-guard
 cd agent-guard
 pip install -e ".[dev]"
 pytest
@@ -411,7 +411,7 @@ A first-class solution lands in M2.
 Set `--repo-root` to the subproject containing `requirements.txt` / `pyproject.toml`, so hallucinated-import detection resolves correctly:
 
 ```yaml
-- uses: <your-org>/agent-guard@v0.1
+- uses: tasnuvaleeya/agent-guard@v0.1
   with:
     config: services/api/.agent-guard.yml
 ```
@@ -421,7 +421,7 @@ Or run the action multiple times with different roots, one per subproject. Nativ
 ### 8.5 Custom failure threshold per branch
 
 ```yaml
-- uses: <your-org>/agent-guard@v0.1
+- uses: tasnuvaleeya/agent-guard@v0.1
   with:
     fail-above: ${{ github.base_ref == 'main' && '40' || '80' }}
 ```
@@ -431,7 +431,7 @@ Strict on `main`, lenient on feature branches.
 ### 8.6 Disable the comment, keep the check
 
 ```yaml
-- uses: <your-org>/agent-guard@v0.1
+- uses: tasnuvaleeya/agent-guard@v0.1
   with:
     post-comment: "false"
 ```
