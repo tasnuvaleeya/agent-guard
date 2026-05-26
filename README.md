@@ -4,6 +4,8 @@
 
 agent-guard scans pull request diffs for the patterns that AI coding assistants tend to slip into your repo: hallucinated imports, dangerous calls, missing tests, infra/auth changes, and leaked secrets. It runs deterministically (no LLM required), in <10s on typical diffs, and posts a single sticky comment on your PR.
 
+![Sample agent-guard PR comment showing risk score, severity tally, and grouped findings](docs/images/snapshot.png)
+
 ## Status
 
 Milestone 1 — MVP. Python only for hallucinated-import detection; all other analyzers are language-agnostic. See [`features/agent-guard-feature-plan.md`](features/agent-guard-feature-plan.md) for the full roadmap.
