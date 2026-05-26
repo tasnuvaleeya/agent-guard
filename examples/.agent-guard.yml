@@ -1,0 +1,21 @@
+# Example agent-guard configuration. Drop this at your repo root as `.agent-guard.yml`.
+# All keys are optional — defaults are sensible.
+
+fail_above: 60   # exit non-zero when risk score exceeds this
+
+analyzers:
+  secrets:
+    enabled: true
+  hallucinated_imports:
+    enabled: true
+  dangerous_patterns:
+    enabled: true
+  missing_tests:
+    enabled: true
+    min_added_lines: 30
+  infra_changes:
+    enabled: true
+
+exclude:
+  - "vendor/**"
+  - "**/*.generated.py"

@@ -1,0 +1,68 @@
+name: agent-guard
+description: CI/CD safety and risk analysis for AI-assisted code changes.
+author: agent-guard contributors
+branding:
+  icon: shield
+  color: purple
+
+inputs:
+  config:
+    description: Path to .agent-guard.yml (defaults to repo root).
+    required: false
+    default: ""
+  fail-above:
+    description: Risk-score threshold above which the job fails. Empty = use config.
+    required: false
+    default: ""
+  post-comment:
+    description: Post a sticky comment on the PR. Set to "false" to disable.
+    required: false
+    default: "true"
+  agent-guard-version:
+    description: Version of agent-guard to install (PyPI). Defaults to the matching action tag.
+    required: false
+    default: "0.1.*"
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Install agent-guard
+      shell: bash
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install "agent-guard==${{ inputs.agent-guard-version }}"
+
+    - name: Determine base SHA
+      id: base
+      shell: bash
+      env:
+        EVENT_NAME: ${{ github.event_name }}
+        BASE_SHA: ${{ github.event.pull_request.base.sha }}
+      run: |
+        if [[ "$EVENT_NAME" == "pull_request" && -n "$BASE_SHA" ]]; then
+          echo "sha=$BASE_SHA" >> "$GITHUB_OUTPUT"
+        else
+          echo "sha=$(git rev-parse HEAD~1)" >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Run agent-guard
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      run: |
+        ARGS=(scan --base "${{ steps.base.outputs.sha }}" --head HEAD --repo-root "${{ github.workspace }}")
+        if [[ -n "${{ inputs.config }}" ]]; then
+          ARGS+=(--config "${{ inputs.config }}")
+        fi
+        if [[ -n "${{ inputs.fail-above }}" ]]; then
+          ARGS+=(--fail-above "${{ inputs.fail-above }}")
+        fi
+        if [[ "${{ inputs.post-comment }}" == "true" && "${{ github.event_name }}" == "pull_request" ]]; then
+          ARGS+=(--post-comment)
+        fi
+        agent-guard "${ARGS[@]}"

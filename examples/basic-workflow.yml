@@ -1,0 +1,19 @@
+# Drop this into .github/workflows/agent-guard.yml in your repo.
+name: agent-guard
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: <your-org>/agent-guard@v0.1
+        with:
+          fail-above: "60"

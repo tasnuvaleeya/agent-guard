@@ -1,0 +1,29 @@
+name: dogfood
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  scan-self:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -e .
+      - name: Run agent-guard on this PR
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          agent-guard scan \
+            --base "${{ github.event.pull_request.base.sha }}" \
+            --head HEAD \
+            --repo-root "${{ github.workspace }}" \
+            --post-comment
