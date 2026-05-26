@@ -62,7 +62,7 @@ The tool analyzes pull requests and git diffs, detects risky AI-generated code p
 - Zero false positives on a curated test fixture of 20 "clean" PRs
 - ≥80% recall on a fixture of 20 "dirty" PRs (planted issues)
 - One-command install: `pip install agent-guard` works
-- GitHub Action usable via `uses: <your-org>/agent-guard@v0.1`
+- GitHub Action usable via `uses: tasnuvaleeya/agent-guard@v0.1`
 
 ---
 
@@ -425,7 +425,7 @@ Discovery walks entry points at startup; each analyzer runs with a per-call time
 
 ## Top 5 Features Most Likely to Attract GitHub Stars
 
-1. **One-line GitHub Action setup** — `uses: <your-org>/agent-guard@v1` with a sticky PR comment showing a clear risk score and findings list. This is the screenshot in the README; it sells the project in 5 seconds
+1. **One-line GitHub Action setup** — `uses: tasnuvaleeya/agent-guard@v1` with a sticky PR comment showing a clear risk score and findings list. This is the screenshot in the README; it sells the project in 5 seconds
 2. **Hallucinated-import detection** — extremely tangible to anyone who's seen Claude/Copilot invent a `from sklearn.preprocessing import MagicScaler`. Demos beautifully and addresses a felt pain point unique to AI-generated code
 3. **AI-smell pack** (M3) — bare-except swallows, stub implementations, weakened assertions, duplicate-block detection. Each one has a viral "I caught the LLM trying to skip writing the test" moment
 4. **Free, deterministic, offline** — no API key required for the default ruleset. LLM is opt-in. This positions agent-guard against paid SaaS competitors and is repeatable in CI without quota anxiety
