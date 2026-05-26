@@ -1,5 +1,10 @@
 # agent-guard
 
+[![PyPI version](https://img.shields.io/pypi/v/ag-scan)](https://pypi.org/project/ag-scan/)
+[![Python versions](https://img.shields.io/pypi/pyversions/ag-scan)](https://pypi.org/project/ag-scan/)
+[![GitHub Marketplace](https://img.shields.io/badge/marketplace-agent--guard--pr--scan-blue?logo=github)](https://github.com/marketplace/actions/agent-guard-pr-scan)
+[![License](https://img.shields.io/github/license/tasnuvaleeya/agent-guard)](LICENSE)
+
 > CI/CD safety and risk analysis for AI-assisted coding workflows (Claude Code, Codex, Cursor, Copilot, …).
 
 agent-guard scans pull request diffs for the patterns that AI coding assistants tend to slip into your repo: hallucinated imports, dangerous calls, missing tests, infra/auth changes, and leaked secrets. It runs deterministically (no LLM required), in <10s on typical diffs, and posts a single sticky comment on your PR.
