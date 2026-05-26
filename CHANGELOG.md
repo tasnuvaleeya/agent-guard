@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-05-26
+
+### Changed
+- Marketplace listing name (`action.yml` `name:` field) changed from `agent-guard` to `ag-scan` to resolve a collision with the existing `Agent-Guard` GitHub organization. The repo, CLI command, and brand are unaffected — `uses: tasnuvaleeya/agent-guard@v0.1.3` continues to work because it's path-based.
+
 ## [0.1.2] - 2026-05-26
 
 ### Changed

@@ -1,5 +1,5 @@
-name: agent-guard
-description: CI/CD safety and risk analysis for AI-assisted code changes.
+name: ag-scan
+description: CI/CD safety and risk analysis for AI-assisted code changes (agent-guard).
 author: agent-guard contributors
 branding:
   icon: shield
