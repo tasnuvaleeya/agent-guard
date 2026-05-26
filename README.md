@@ -11,9 +11,7 @@ agent-guard scans pull request diffs for the patterns that AI coding assistants 
 
 ![Sample agent-guard PR comment showing risk score, severity tally, and grouped findings](docs/images/snapshot.png)
 
-## Status
-
-Milestone 1 — MVP. Python only for hallucinated-import detection; all other analyzers are language-agnostic. See [`features/agent-guard-feature-plan.md`](features/agent-guard-feature-plan.md) for the full roadmap.
+## Reference
 
 For the full reference — every CLI flag, every rule, every config key, CI recipes, troubleshooting, and FAQ — see [**`docs/USER_MANUAL.md`**](docs/USER_MANUAL.md).
 
@@ -45,7 +43,6 @@ pip install ag-scan                # PyPI distribution name
 git diff main...HEAD | agent-guard scan --format md
 ```
 
-> **Note:** the PyPI distribution name is `ag-scan` because `agent-guard` was already taken by an unrelated project. The CLI command and GitHub Action are still named `agent-guard`.
 
 ## What it flags
 
