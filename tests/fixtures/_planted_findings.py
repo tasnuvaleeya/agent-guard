@@ -12,3 +12,7 @@ def run_user_input(cmd: str) -> object:
 
 
 _ = sparkle  # silence "unused import" — though that's the least of this file's problems
+
+# Additional planted finding to test idempotency:
+import subprocess
+subprocess.run("ls", shell=True)   # dangerous.subprocess-shell-true
